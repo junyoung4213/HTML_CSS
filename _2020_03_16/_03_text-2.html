@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>있는 그대로 표시</title>
+</head>
+<body>
+    <h3>로컬 스토리지에 저장하는 함수</h3>
+    <pre>   <!-- 있는 그대로 보여주는 함수 -->
+        function init() {
+            localStorage.setItem("A", "A입니다."); 
+            localStorage.setItem("B", "B입니다."); 
+            localStorage.setItem("C", "C입니다."); 
+            localStorage.setItem("D", "D입니다."); 
+            localStorage.setItem("E", "E입니다."); 
+        
+            var val = localStorage.getItem("A") + " " +
+            localStorage.getItem("B") + " " +
+            localStorage.getItem("C") + " " +
+            localStorage.getItem("D") + " " +
+            localStorage.getItem("E");
+        
+            document.querySelector("#result").innerHTML = val;
+        }</pre>
+</body>
+</html>
