@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse:collapse; 
+        }
+        th{
+            
+            width:100px;
+            height:30px;
+        }
+        td{
+            width:120px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>1인당 연간 설탕 소비량<small>(단위kg)</small></caption>
+        <colgroup> 
+            <col style="background-color: gray;">
+        </colgroup>
+        <tr>
+            <th>WHO권장량</th>
+            <td>18.25</td>
+        </tr>
+        <tr>
+            <th style="background-color: green;">한국</th>
+            <td>22</td>
+        </tr>
+        <tr>
+            <th>중국</th>
+            <td>25</td>
+        </tr>
+    </table>
+</body>
+</html>

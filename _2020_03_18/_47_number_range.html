@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자와 범위</title>
+    <style>
+        body{
+            background-color:#fff;
+        }
+        form legend{
+            font-size:15px;
+            font-weight: 600;
+        }
+        form label.reg{
+            font-size:14px;
+            width:150px;
+            float:left;
+        }
+        form ul li{
+            list-style: none;
+            margin:15px 0;
+        }
+        #member,#stuffs{
+            width:125px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>등록 정보</legend>
+            <ul>
+                <li>
+                    <label for="member" class="reg">
+                        참여인원<samll>(최대10명)</samll>
+                    </label>
+                    <input id="member" type="number"
+                        value="1" min="0" max="10"
+                        step="1">
+                </li>
+                <li>
+                    <label for="stuffs" class="reg">
+                        지원물품<small>(1인당 5개)</small>
+                    </label>
+                    <input id="stuffs" type="number"
+                        value="1" min="0" max="50"
+                        step="5">
+                </li>
+                <li>
+                    <label for="satis" class="reg">
+                        희망 단계<small>(하,중,상)</small>
+                    </label>
+                    <input id="satis" type="range"
+                        value="1" min="1" max="3">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
