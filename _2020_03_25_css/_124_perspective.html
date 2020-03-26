@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        #no-pers, #pers{
+            width: 152px;
+            height: 180px;
+            margin: 30px;
+            border: 3px solid gold;
+            float: left;
+        }
+        .rose{
+            transform: rotateZ(10deg);
+        }
+        .rotatex img{transform:rotateX(50deg);}
+        /* perspective : 원근감, 클수록 멀어진다 */
+        #pers{perspective: 300px;}
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/sunset.jpg">
+    </div>
+    <div id="no-pers">
+        <div class="rotatex">
+            <img src="../images/sunset.jpg">
+        </div>
+    </div>
+    <div id="pers">
+        <div class="rotatex">
+            <img src="../images/sunset.jpg">
+        </div>
+    </div>
+  
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px;}
+        .container{
+            border: 1px solid gold;
+            perspective: 300px;
+            margin-top: 100px;
+            margin-left: 100px;
+            float: left;
+        }
+        .box1{
+            background-color: cornflowerblue;
+            transform:rotateY(45deg);
+        }
+        .box2{
+            background-color: purple;
+            transform-origin: left top;
+            transform:rotateX(45deg);
+        }
+        /* transform-style : 부모요소에 적용한 3Dd변형을 하위에 적용할지 */
+        #tr-style1{transform-style:flat;}
+        #tr-style2{transform-style:preserve-3d}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1" id="tr-style1">
+            <div class="box2"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box1" id="tr-style2">
+            <div class="box2"></div>
+        </div>
+    </div>
+</body>
+</html>

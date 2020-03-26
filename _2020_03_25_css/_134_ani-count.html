@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        .box{
+            margin-top: 50px;
+            margin-left: 100px;
+            padding: 20px;
+            height: 60px;
+            animation-name: moving;
+            animation-duration: 1s;
+            animation-timing-function: ease-in; /*속도곡선*/
+            animation-direction:alternate-reverse; /* 애니메이션이 끝난 후 반대로 실행 X */
+            animation-iteration-count: infinite; /* 무한반복 */
+        }
+        @keyframes moving{
+            from{
+                width: 200px;
+                background:orange;
+                opacity: 0.5;
+                transform: scale(0.5) rotate(15deg);
+            }
+            to{
+                width: 800px;
+                background:darkgreen;
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>CSS3 Animation</h3>
+    </div>
+</body>
+</html>

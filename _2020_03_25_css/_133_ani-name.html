@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            float: left;
+            margin: 50px;
+        }
+        #box1{
+            background-color: orange;
+            border: 3px solid blue;
+            animation-name: shape;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        #box2{
+            background-color: purple;
+            border: 3px solid gold;
+            animation-name: rotate;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes shape{
+            from{
+                border: 1px solid yellow;
+            }
+            to{
+                border: 3px solid darkblue;
+                border-radius: 50%;
+            }
+        }
+
+        @keyframes rotate{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(45deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

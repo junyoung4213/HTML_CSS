@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        .origin{
+            width: 210px;
+            height: 200px;
+            margin: 56px;
+            border: 3px solid gold;
+            float: left;
+            perspective: 200px; /* 입체적으로 보일 수 있는 깊이값 */
+        }
+        .rotatex:hover{
+            transform: rotatex(45deg); /*각도 조절*/
+        }
+        .rotatey:hover{
+            transform: rotatey(45deg);
+        }
+        .rotatez:hover{
+            transform: rotatez(45deg); /*각도 조절*/
+        }
+        .rotatexyz:hover{
+            transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="rotatex">
+            <img src="../images/fruit.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotatey">
+            <img src="../images/fruit.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotatez">
+            <img src="../images/fruit.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotatexyz">
+            <img src="../images/fruit.jpg" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>

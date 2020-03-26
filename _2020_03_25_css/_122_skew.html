@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        .origin{
+            width: 160px;
+            height: 240px;
+            margin: 100px;
+            border: 3px solid gold;
+            float: left;
+        }
+        .skewx:hover{
+            transform: skewx(30deg); /*각도 조절*/
+        }
+        .skewy:hover{
+            transform: skewy(15deg);
+        }
+        .skewxy:hover{
+            transform: skew(-25deg, -15deg); /*각도 조절*/
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="skewx">
+            <img src="../images/rose.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="skewy">
+            <img src="../images/rose.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="skewxy">
+            <img src="../images/rose.jpg" alt="">
+        </div>
+    </div>
+  
+    
+</body>
+</html>
