@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "맑은 고딕";
+        }
+
+        table,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        .table1 {
+            border-collapse: collapse;
+            width: 300px;
+            /* auto : 기본설정이다.
+            없으면 내용에 따라 맞춰지지만 fixed면 고정된다.*/
+            table-layout: fixed;    /*셀 너비 고정*/
+            word-break: break-all;/*문장이 길면 개행해라*/
+            height: auto;       /*셀의 줄바꿈에 따라 높이값 자동 조정*/
+        }
+
+        .table1 td {
+            width: 150px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table Layout</h1>
+    <table class="table1">
+        <tr>
+            <td>한글로띄어쓰기없기길게붙여쓰기</td>
+            <td>long_description_without_space</td>
+        </tr>
+    </table>
+</body>
+
+</html>

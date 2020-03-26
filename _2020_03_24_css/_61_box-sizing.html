@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width 너비 설정</title>
+    <style>
+        div{
+            float:left;
+            margin-right: 20px;
+        }
+        /* .box1의 영역 = 300 + 30*2 + 2*2 = 364 */
+        .box1{
+            box-sizing: content-box;
+            width: 300px; /*컨텐츠 영역 width 300px*/
+            height: 150px;
+            margin: 10px;
+            padding: 30px;
+            border: 2px solid red;
+        }
+        /* .box2의 영역 : 300, 컨텐츠 영역=300-30*2-2*2=236 */
+        .box2{
+            box-sizing: border-box;
+            width: 300px;/*border 영역 width 300px*/
+            height: 150px;
+            margin: 10px;
+            padding: 30px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box-sizing = "content-box"</div>
+    <div class="box2">box-sizing = "border-box"</div>
+</body>
+</html>

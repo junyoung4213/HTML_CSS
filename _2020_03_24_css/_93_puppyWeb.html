@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 웹</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        body{
+            font-family: "맑은 고딕", "고딕", "굴림";
+        }
+        #wrapper{
+            width: 800px;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 150px;
+            background-color: #f46075;
+            background-image: url(../images/nav2.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+        header nav{
+            float: left;
+            width: 70%;
+            margin-top: 50px;
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li{
+            display: inline-block;
+            /* float: left; */
+            font-weight: bold;
+            margin: 15px;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        h2{font-size: 1.5em;}
+        h3{font-size: 1.0em;}
+
+        footer p{padding: 20px;}
+
+        article p{
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        section{
+            float: left;
+            width: 580px;
+            padding: 5px;
+        }
+
+        section article{
+            float: left;
+            width: 250px;
+            height: 220px;
+            margin: 5px;
+            padding: 10px;
+            border: 3px dotted orangered;
+        }
+
+        aside{
+            float: right;
+            width: 200px;
+            height: auto;
+            margin-top: 80px;
+            /* border: 1px solid darkgreen; */
+            text-align: center;
+        }
+
+        aside img{
+            width: 99%;
+            padding: 2%;
+            border: 2px dotted deepskyblue;
+        }
+
+        footer{
+            clear: both;
+            width: 800px;
+            margin-bottom: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .at1, .at2, .at3, .at4{
+            transition: 1s;
+        }
+
+        .at1:hover{
+            background-color: #cf9;
+            border: 3px solid green;
+        }
+        .at2:hover{
+            background-color: #a2d0ff;
+            border: 3px solid blue;
+        }
+        .at3:hover{
+            background-color: #f2ff21;
+            border: 3px solid #bac;
+        }
+        .at4:hover{
+            background-color:darkseagreen;
+            border: 3px solid orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">애완견 종류</a></li>
+                    <li><a href="#">입양하기</a></li>
+                    <li><a href="#">건강돌보기</a></li>
+                    <li><a href="#">더불어살기</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h2>강아지 용품 준비하기</h2>
+            <article class="at1">
+                <h3>강아지 집</h3>
+                <p>강아지가 좋아하는 포근한 집</p>
+            </article>
+            <article class="at2">
+                <h3>강아지 먹이</h3>
+                <p>어린 강아지용 사료 선택하세요</p>
+            </article>
+            <article class="at3">
+                <h3>밥그릇, 물병</h3>
+                <p>바닥이 넓은 것, 물병은 대롱이 달린 것</p>
+            </article>
+            <article class="at4">
+                <h3>이름표, 목줄</h3>
+                <p>이름표를 목에 걸어주세요</p>
+            </article>
+        </section>
+        <aside>
+            <img src="../images/dog1.jpg" alt="" width="280" height="153">
+            <img src="../images/dog2.jpg" alt="" width="280" height="153">
+            <img src="../images/dog3.jpg" alt="" width="280" height="153">
+        </aside>
+        <footer>
+            <p>Copyright &copy; 2020 puppyWeb</p>
+        </footer>
+    </div>
+</body>
+</html>

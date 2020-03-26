@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position - absolute</title>
+    <style>
+      #wrap {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ccc;
+      }
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        color: snow;
+        background: slateblue;
+        text-align: center;
+      }
+
+      #cr1 {
+        top: 0;
+        left: 0;
+      }
+      #cr2 {
+        top: 0;
+        right: 0;
+      }
+      #cr3 {
+        bottom: 0;
+        left: 0;
+      }
+      #cr4 {
+        bottom: 0;
+        right: 0;
+      }
+      #cr5 {
+        top: 100px;
+        left: 100px;
+      }
+    </style>
+  </head>
+
+  <!-- absolute속성에서 기준이 되는 위치는
+가장 가까운 부모요소나 조상요소중 position속성이
+relative인 요소이다. -->
+
+  <body>
+    <div id="wrap">
+      <div class="box" id="cr1">cr1</div>
+      <div class="box" id="cr2">cr2</div>
+      <div class="box" id="cr3">cr3</div>
+      <div class="box" id="cr4">cr4</div>
+      <div class="box" id="cr5">cr5</div>
+    </div>
+  </body>
+</html>

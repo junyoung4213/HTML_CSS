@@ -1,0 +1,81 @@
+<!-- HTML4
+영역을 나눌 때 div를 주로 사용하였다.
+일반적으로 페이지는 헤더+본문+푸터 구성되는 경우가 많다.
+
+HTML5 : 웹표준
+시맨틱 웹 : 전통적으로 보이는 요소에만 치중하던 HTML을
+            표준을 정해서 구조적으로 분류해서 의미를 해석
+            하고자 하는 웹
+<필요성>
+1) 시각장애자 : 화면낭독기-HTML의미있는 구조분석
+2) 데이터 처리 자동화 : 웹페이지를 수집해서 항목을 분류할 때
+
+HTML5
+; 시멘틱 태그
+HTML문서의 항목의 역할을 규정하는 태그
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML4</title>
+    <style>
+      div,
+      header,
+      nav,
+      section,
+      article,
+      footer {
+        border: 5px solid #000;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 헤더 영역 : 페이지 타이틀, 이동 메뉴 -->
+      <header>
+        <h1>애완견 종류</h1>
+        <nav>
+          <ul>
+            <li><a href="#">애완견 종류</a></li>
+            <li><a href="#">입양하기</a></li>
+            <li><a href="#">건강돌보기</a></li>
+            <li><a href="#">더불어살기</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- 본문 영역 : 소주제로 분류 (article) -->
+      <section>
+        <h2>활달한 강아지</h2>
+        <article>
+          <h3>요크셔테리어</h3>
+          <p>생기있고 활달한 성질을 가짐</p>
+        </article>
+
+        <article>
+          <h3>말티즈</h3>
+          <p>애정이 많고, 충실하며 활달한 성격</p>
+        </article>
+
+        <article>
+          <h3>포메라니안</h3>
+          <p>활기차고 명랑한 타입, 걷는 모습 우아</p>
+        </article>
+
+        <article>
+          <h3>골든 리트리버</h3>
+          <p>충성심이 강하고 성격이 활달함</p>
+        </article>
+      </section>
+      <footer>
+        <p>Published by HappyCom.</p>
+      </footer>
+    </div>
+  </body>
+</html>
