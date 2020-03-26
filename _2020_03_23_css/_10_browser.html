@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저별 표현</title>
+    <style>
+        /*class가 box인 영역에 마우스가 위에 놓였을 때*/
+        /* 표준 규약이 아닌 것은 브라우저따라 지원방식이 다르다
+        그래서 속성 이름앞에 접두사(prefix)를 붙여서 브라우저별로
+        구분해야 한다 */
+        .box:hover{
+            -webkit-transform: rotate(15deg);/*웹키트(사파리)*/
+            -moz-transform: rotate(15deg);/*모질라, 파이어폭스*/
+            -o-transform: rotate(15deg);/*오페라*/
+            -ms-transform: rotate(15deg);/*마이크로소프트*/
+            transform: rotate(15deg);/*표준*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Mouse Over</div>
+</body>
+</html>

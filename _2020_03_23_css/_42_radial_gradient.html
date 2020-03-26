@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선형 그라데이션</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .grad1{
+            background: blue;/*css3 미지원 브라우저*/
+            background:-webkit-radial-gradient(white,green,blue);
+            background:-moz-radial-gradient(white,green,blue);
+            background:-o-radial-gradient(white,green,blue);
+            background:radial-gradient(white,green,blue);
+            /* 기본형은 ellipse */
+        }
+        .grad2{
+            background: blue;/*css3 미지원 브라우저*/
+            background:-webkit-radial-gradient(circle,white,green,blue);
+            background:-moz-radial-gradient(circle,white,green,blue);
+            background:-o-radial-gradient(circle,white,green,blue);
+            background:radial-gradient(circle,white,green,blue);
+            /* circle을 써주면 원형으로 바뀜 */
+        }
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+</body>
+</html>

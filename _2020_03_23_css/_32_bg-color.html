@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색</title>
+    <style>
+        /*배경색이나 배경이미지는 부모에서 자식으로 상속되지 않는다. 다만 자식의 기본 배경은 투명이기 때문에
+        부모의 배경이 나타날 뿐이다. */
+        body{
+            background-color:purple; /*문서전체 배경색*/
+        }
+        div{
+            background-color: white;
+            width: 90%; /*너비*/
+            padding: 15px;
+            border: 1px solid black;
+        }
+        p{
+            line-height: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, corrupti consequuntur? Praesentium error eum similique nostrum quis odio modi, aperiam ex voluptates nisi excepturi magni, consectetur velit officiis magnam numquam exercitationem, ipsum officia dignissimos quidem necessitatibus repudiandae harum dolores! Reiciendis placeat est pariatur quo exercitationem consequatur cumque ratione quia quod?</p>
+    </div>
+</body>
+</html>

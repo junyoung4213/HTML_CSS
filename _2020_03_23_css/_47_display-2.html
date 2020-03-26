@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 속성</title>
+    <style>
+        #nav ul{
+            list-style-type: none;
+        }
+        #nav li{
+            display: inline;/*인라인 레벨 속성을 부여한다*/
+            padding: 10px 15px;
+            margin-right: 20px;
+            border-top: 3px solid #222;
+            background-color: green;
+        }
+        #nav ul li:hover{
+            background-color: yellow;
+        }
+        #nav ul li a{
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">애완견 종류</a></li>
+            <li><a href="#">입양하기</a></li>
+            <li><a href="#">건강돌보기</a></li>
+            <li><a href="#">더불어살기</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선형 그라데이션</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .grad{
+            background: blue;/*css3 미지원 브라우저*/
+            /*시작위치, 시작색상, 중지점색상과 위치, 끝색상*/
+            background:-webkit-linear-gradient(top, darkblue,white 30%, blue);
+            background:-moz-linear-gradient(bottom, darkblue,white 30%, blue);
+            background:-o-linear-gradient(bottom, darkblue, white 30%,blue);
+            background:linear-gradient(to bottom, darkblue,white 30%, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad"></div>
+</body>
+</html>
