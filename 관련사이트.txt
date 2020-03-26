@@ -1,0 +1,21 @@
+http://www.csszengarden.com/   - 동일한 html과 다른 css적용
+https://brushez.com/trana-ttf.html - 폰트 다운로드
+https://fonts.google.com/?query=N - 구글 웹폰트
+http://guny.kr/stuff/klorem/#/p-view - 한글 Lorem Ipsum 생성 (임의의 문장 생성기)
+http://leaverou.github.io/prefixfree/ - 브라우저별 css자동적용
+http://www.colorpicker.com/  - 색상 추출 사이트
+HTML5 Video Caption Maker - video 자막 편집
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script> - jQuery 다운로드
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> - jQuery 다운로드
+<script src="../libs/jquery-1.11.0.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
