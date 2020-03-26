@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>id가 menu인 li태그 색 변경하기 - DOM 사용하기</title>
+    <script>
+      window.onload = function () {
+        var menu2 = document.getElementById(menu2);
+        var liList = menu2.getElementsByTagName('li');
+        for (var i = 0; i < liList.length; i++) {
+          var li = liList[i];
+          li.style.color = '#f00';
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>#menu2의 li태그 색을 변경하세요</p>
+    <ul class="menu" id="menu1">
+      <li>menu1-1</li>
+      <li>menu1-2</li>
+      <li>menu1-3</li>
+      <li>menu1-4</li>
+      <li>menu1-5</li>
+    </ul>
+    <ul class="menu" id="menu2">
+      <li>menu2-1</li>
+      <li>menu2-2</li>
+      <li>menu2-3</li>
+      <li>menu2-4</li>
+      <li>menu2-5</li>
+    </ul>
+  </body>
+</html>

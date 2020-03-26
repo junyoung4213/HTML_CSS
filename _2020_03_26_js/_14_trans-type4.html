@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery - 형변환</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- 직접 링크타고 들어가서 다운로드 // 네트워크 필수 -->
+    <!-- <script src="../libs/jquery-1.11.0.min.js"></script> -->
+    <!-- 경로 타고 들어가는 방식 -->
+    <script>
+      $(document).ready(function() {
+        var bgColor = 0xff0;
+        // 선택자
+        // $("body").css("background-color", "#"+bgColor.toString(16));
+        // $("h1#title").css("font-size","3em");
+        // $("h1#title").css("color","black");
+        // $("h1#title").css("font-weight","bold");
+        // $("h1#title").css("font-style","italic");
+        var title = $('h1#title');
+        title
+          .css('background-color', '#' + bgColor.toString(16)) // 위 방법보다 간단 #0xff0
+          .css('font-size', '3em')
+          .css('color', 'black')
+          .css('font-weight', 'bold')
+          .css('font-style', 'italic')
+          .css('width', '300px')
+          .css('text-align', 'center')
+          .css('border', '3px solid black');
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="title">Hello javascript!</h1>
+  </body>
+</html>

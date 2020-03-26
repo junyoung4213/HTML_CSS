@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1초마다 배경색 랜덤하게 변경하기</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+      // 시작되었을 때 처리하는 부분
+      $(document).ready(function() {
+        // 1초마다 등록한 함수 호출
+        setInterval(function() {
+          // 0 ~ 0xffffff사이의 랜덤
+          var color = Math.random() * 0xffffff;
+          color = parseInt(color);
+          color = color.toString(16);
+          $('body').css('background-color', '#' + color);
+        }, 1000);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

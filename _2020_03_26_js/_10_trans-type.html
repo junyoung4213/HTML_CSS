@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형 변환</title>
+    <script>
+      var s = 10 + '10'; // 자동 형변환
+      s = String(10) + '10'; // 명시적 형변환
+      document.write(s + '<br>');
+
+      a = true + '10'; // 문자형
+      document.write(a + '<br>');
+
+      a = true + 10; // 숫자형
+      document.write(typeof a + ' : ');
+      document.write(a + '<br>');
+
+      // 문자 -> 숫자
+      var val = '3.14';
+      var result = Number(val); // 정수, 실수
+      var result1 = parseInt(val); // 정수형
+      var result2 = parseFloat(val); // 실수형
+      document.write(typeof result + ' : ');
+      document.write(result + '<br>');
+      document.write(typeof result1 + ' : ');
+      document.write(result1 + '<br>');
+      document.write(typeof result2 + ' : ');
+      document.write(result2 + '<br>');
+
+      // 숫자 -> 문자
+      var val = 15;
+      var result = String(val);
+      var result1 = val.toString();
+      var val = 123.456;
+      var result2 = val.toFixed(2); // 소수 둘째자리 반올림
+      var val = 15;
+      var result3 = val + '';
+      var result4 = val.toString(16); // 16진수
+      document.write(typeof result + ' : ');
+      document.write(result + '<br>');
+      document.write(typeof result1 + ' : ');
+      document.write(result1 + '<br>');
+      document.write(typeof result2 + ' : ');
+      document.write(result2 + '<br>');
+      document.write(typeof result3 + ' : ');
+      document.write(result3 + '<br>');
+      document.write(typeof result4 + ' : ');
+      document.write(result4 + '<br>');
+    </script>
+  </head>
+  <body></body>
+</html>
