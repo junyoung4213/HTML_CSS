@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문</title>
+    <script>
+        function initTable(){
+            for(i=0;i<=10;i++){
+                document.write("<tr><td>" + i + "</td><td>"
+                    + ((i*9.0/5)+32) + "</td></tr>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="3">
+        <tr>
+            <th>섭씨온도</th>
+            <th>화씨온도</th>
+        </tr>
+        <script>
+            initTable();
+        </script>
+    </table>
+</body>
+</html>

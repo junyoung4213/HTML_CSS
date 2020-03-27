@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 종류</title>
+    <script>
+        var count = 0;
+
+        myFunc();
+        theFunc();
+
+        // 이름이 있는 함수
+        // 어디서나 선언가능하고 실행 가능
+        // 함수 선언, 실행코드보다 메모리에 먼저 올라간다
+        function myFunc(){
+            count++;
+            document.write("hello" + count + "<br>");
+        }
+
+        // 익명함수
+        // 반드시 위에 선언한 후 실행해야 한다.
+        // 이 행위자체가 코드 실행
+        var theFunc = function(){
+            count++;
+            document.write("bye" + count + "<br>");
+        }
+
+        // 2개 모두 잘 실행된다.
+        myFunc();
+        theFunc();
+
+        // 그래서 모두 메모리에 로딩된 후에 실행하려고
+        // $(document).ready(function(){});    // jQuery
+        // window.onload = function(){};       // js dom
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery css 스타일 설정</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnCheck").on("click", function(){
+                $("#panel").css("border", "4px solid orange");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnCheck">확인</button>
+    <div id="panel">
+        스타일 설정하기
+    </div>
+</body>
+</html>

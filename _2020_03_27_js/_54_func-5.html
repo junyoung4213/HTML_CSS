@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역변수 - 전역변수</title>
+    <script>
+        function add(a0, a1){
+            // sum은 지역변수라 함수내에서만 사용가능하다
+            var sum = a0 + a1;
+        }
+
+        // 브라우저가 종료하기 전까지 메모리에 존재
+        // 전역변수
+        var result = 0;
+        function mul(a0, a1){
+            result = a0 * a1;
+        }
+
+        // add(10, 20);
+        // document.write(sum);
+        mul(10, 20);
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
