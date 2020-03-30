@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>비동기 테스트</title>
+        <script>
+            // 동기방식은 결과가 나올 때까지 대기
+            // 비동기방식은 콜백함수를 전달해서 대기하지 않고
+            // 나중에 결과가 나오면 콜백함수를 호출하도록 하는 방식
+            var count = 1;
+            setInterval(() => {
+                document.write('2. count = ' + count + '<br>');
+                count++;
+            }, 1000);
+
+            document.write('1. ajax() 동작이 모두 끝나지 않았어도 바로 실행');
+        </script>
+    </head>
+    <body></body>
+</html>

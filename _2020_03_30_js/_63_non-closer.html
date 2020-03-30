@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클로저가 아닌 함수</title>
+        <script>
+            // count 는 지역변수이므로 함수호출시 생성되고
+            // 호출이 끝나면 사라진다.
+            function addCount() {
+                var count = 0;
+                count++;
+                return count;
+            }
+
+            document.write('1. count = ' + addCount(), '<br>');
+            document.write('2. count = ' + addCount(), '<br>');
+            document.write('3. count = ' + addCount(), '<br>');
+        </script>
+    </head>
+    <body></body>
+</html>

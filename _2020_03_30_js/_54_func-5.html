@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>리턴값으로 함수를 리턴하기</title>
+        <script>
+            function createHello() {
+                function hello(user) {
+                    document.write(user + '님 방문을 환영합니다');
+                }
+                return hello;
+            }
+            // var func = createHello();
+            // func('홍길동');
+            createHello()('홍길동'); // hello()를 리턴받기 때문에 뒤에 ('홍길동')을 붙여주면 바로 사용가능.
+        </script>
+    </head>
+    <body></body>
+</html>

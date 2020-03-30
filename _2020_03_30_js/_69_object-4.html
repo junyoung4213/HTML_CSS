@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>객체 생성 방법 - 생성자 함수를 사용한 방법</title>
+        <script>
+            function Car(model, speed, color) {
+                this.model = model;
+                this.speed = speed;
+                this.color = color;
+                this.break = function() {
+                    this.speed -= 10;
+                };
+                this.accel = function() {
+                    this.speed += 10;
+                };
+            }
+            var myCar = new Car('520d', 60, 'white');
+            document.write(myCar.model, '<br>');
+            document.write(myCar.speed, '<br>');
+            document.write(myCar.color, '<br>');
+
+            var myCar1 = new Car('s300', 70, 'red');
+            document.write(myCar.model, '<br>');
+            document.write(myCar.speed, '<br>');
+            document.write(myCar.color, '<br>');
+        </script>
+    </head>
+    <body></body>
+</html>

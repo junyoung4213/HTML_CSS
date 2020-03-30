@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>고전 이벤트 방식</title>
+        <script>
+            window.onload = function() {
+                var btn = document.getElementById('btn');
+                btn.onclick = function() {
+                    alert('클릭');
+                    btn.onclick = null; // 한번 클릭하면 onclick이 null이 되어 작동하지 않게 된다.
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btn" value="클릭" />
+    </body>
+</html>

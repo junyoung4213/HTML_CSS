@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>버튼 클릭 시 1씩 증가하는 타이머</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(() => {
+                $('#btnStart').click(() => {
+                    start();
+                    document.write('시작합니다<br>');
+                });
+            });
+
+            function start() {
+                var count = 0; // 지역변수지만, 함수 내에서 사용되고 있기 때문에 값이 증가한다.
+                setInterval(() => {
+                    count++;
+                    document.write(count, '<br>');
+                }, 1000);
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btnStart">시작</button>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>location 오브젝트</title>
+        <script>
+            // location 객체
+            // - href, host, hostname, port, pathname,
+            // hash, search, protocol
+            // - reload(), replace()
+
+            var t = new Date();
+            document.write(t.getHours() + ':' + t.getMinutes() + ':' + t.getSeconds());
+
+            setInterval(() => {
+                location.reload();
+            }, 1000);
+
+            setTimeout(() => {
+                location.href = 'https://www.naver.com';
+                // location.replace('https://www.daum.net');
+            }, 950);
+            // reload보다 시간이 더 오래걸리면, reload가 계속 되어서 타임아웃이 안된다.
+        </script>
+    </head>
+    <body></body>
+</html>

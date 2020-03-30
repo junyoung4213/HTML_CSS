@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>매개변수로 함수 전달</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 직접 익명함수를 바로 ready의 매개변수로 전달
+            $(document).ready(function() {
+                function hello() {
+                    document.write('안녕하세요. 환영합니다.');
+                }
+                function hello1() {
+                    document.write('Welcome. Thank you!');
+                }
+                // click의 매개변수로 hello함수를 전달
+                $('#btnStart').click(hello1);
+            });
+        </script>
+    </head>
+    <body>
+        <button id="btnStart">시작</button>
+    </body>
+</html>

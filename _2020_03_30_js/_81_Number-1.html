@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Number 객체</title>
+        <script>
+            // 아래 2개는 같다
+            var num1 = 7;
+            var num2 = new Number(7);
+
+            document.write(Number.MAX_VALUE, '<br>'); // 최대 표현값
+            document.write(Number.MIN_VALUE, '<br>'); // 최소 표현값
+
+            // 지수형 표기
+            var num = 1232.34567;
+            document.write(num.toExponential(), '<br>'); // 지수형 표기방법
+            document.write(num.toExponential(1), '<br>');
+
+            // 고정 소수점 표기
+            num = 123.45678;
+            document.write(num.toFixed(), '<br>');
+            document.write(num.toFixed(1), '<br>'); // 소수점 첫째 자리 까지만 표기. 반올림됨
+
+            // 유효 숫자 수 지정
+            document.write(num.toPrecision(1), '<br>');
+            document.write(num.toPrecision(2), '<br>');
+            document.write(num.toPrecision(5), '<br>');
+
+            // 진법 표현
+            var num = 255;
+            document.write(num.toString(), '<br>');
+            document.write('0x' + num.toString(16), '<br>');
+            document.write('0o' + num.toString(8), '<br>');
+            document.write('0b' + num.toString(2), '<br>');
+        </script>
+    </head>
+    <body></body>
+</html>

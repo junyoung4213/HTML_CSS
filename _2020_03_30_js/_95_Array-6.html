@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>정렬</title>
+        <script>
+            var myArray = [10, 7, 23, 99, 169, 19, 11, 1];
+            myArray.sort(); // 알파벳 순서로 정렬
+            document.write(myArray + '<br>');
+
+            // 오름차순 정렬
+            myArray.sort(function(a, b) {
+                return a - b;
+            });
+            document.write(myArray + '<br>');
+
+            // 내림차순 정렬
+            myArray.sort(function(a, b) {
+                return b - a;
+            });
+            document.write(myArray + '<br>');
+        </script>
+    </head>
+    <body></body>
+</html>

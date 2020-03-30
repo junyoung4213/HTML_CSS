@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클로저 함수</title>
+        <script>
+            // count는 지역변수이지만 메모리에서 유지된다
+            function createCounter() {
+                // 외부함수
+                var count = 0; // 외부함수의 지역변수
+                function addCount() {
+                    // 내부함수
+                    count++; // 내부함수내에서 사용됨
+                    return count;
+                }
+                return addCount;
+            }
+            var counter = createCounter();
+            document.write('1. count = ' + counter(), '<br>');
+            document.write('2. count = ' + counter(), '<br>');
+            document.write('3. count = ' + counter(), '<br>');
+        </script>
+    </head>
+    <body></body>
+</html>

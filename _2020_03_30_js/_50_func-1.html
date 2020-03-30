@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>변수에 함수를 저장하는 경우</title>
+        <script>
+            function hello(name) {
+                document.write(name + '님 환영합니다<br>');
+            }
+            hello('홍길동');
+            var func = hello; // 변수가 함수(hello)를 가리킴
+            func('임꺽정'); // func로 hello() 함수 사용
+        </script>
+    </head>
+    <body></body>
+</html>

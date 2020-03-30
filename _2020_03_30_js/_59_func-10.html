@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>사칙연산</title>
+        <script>
+            function calculator1(op, num1, num2) {
+                var result = 0;
+
+                switch (op) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    default:
+                        result = '지원하지 않는 연산자입니다';
+                }
+                document.write('두 수의 연산은 ' + result + '입니다<br>');
+            }
+            function calculator2(op, num1, num2) {
+                var result = 0;
+
+                switch (op) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    default:
+                        result = '지원하지 않는 연산자입니다';
+                }
+                document.write('정답은 = ' + result + '입니다<br>');
+            }
+            calculator1('+', 10, 20);
+            calculator2('*', 10, 20);
+        </script>
+    </head>
+    <body></body>
+</html>

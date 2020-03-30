@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>카운트 타이머 만들기</title>
+        <script>
+            function datesUntilNewYear() {
+                var now = new Date();
+                // 내년 1월 1일 설날
+                var newYear = new Date('January 1, ' + (now.getFullYear() + 1));
+                // 차이 계산
+                var diff = newYear - now;
+                var milliseconds = Math.floor(diff % 1000);
+                diff = diff / 1000;
+                var seconds = Math.floor(diff % 60);
+                diff = diff / 60;
+                var minutes = Math.floor(diff % 60);
+                diff = diff / 60;
+                var hours = Math.floor(diff % 24);
+                diff = diff / 24;
+                var days = Math.floor(diff);
+
+                var outStr = '내년도 1월 1일까지' + days + '일' + hours + '시간' + minutes + '분' + seconds + '초' + milliseconds + '밀리초' + '남았습니다';
+                document.getElementById('reamining').innerHTML = outStr;
+            }
+            setInterval(datesUntilNewYear, 1000);
+        </script>
+    </head>
+    <body>
+        <div>사이에 넣을 때</div>
+        <div id="reamining"></div>
+    </body>
+</html>
