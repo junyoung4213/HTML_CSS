@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.menu{
+            padding:10px;
+            list-style:none;
+            border:1px #000 solid;
+        }
+        ul.menu li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        li.select{
+            background-color:#ccc;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        var $menu = null;
+        var $menuName = null;
+        var $selectedItem = null;
+        $(document).ready(function(){
+            init();
+            initEvent();
+        });
+
+        // 사용할 노드를 얻기
+        function init(){
+            $menu = $("ul.menu");
+            $menuName = $("#menuName");
+        }
+
+        // 이벤트 연결
+        function initEvent(){
+            $("#add").click(function(){
+                addMenu();
+            });
+
+            $("#update").click(function(){
+                updateMenu();
+            });
+
+            // 처음에 추가된 항목 | 나중에 추가된 항목
+            $menu.on("click", "li", function(){
+                selectItem($(this));
+            });
+        }
+
+        // add
+        function addMenu(){
+            var menuName = $menuName.val(); // input 입력값
+            var newMenuItem = "<li>" + menuName + "</li>";
+
+            if($selectedItem != null)
+                $selectedItem.after(newMenuItem);
+            else
+                $menu.append(newMenuItem);
+        }
+
+        // select
+        function selectItem($item){
+            if($selectedItem != null)
+                $selectedItem.removeClass("select");
+
+            $item.addClass("select");
+            $selectedItem = $item;
+        }
+
+        function updateMenu(){
+            var menuName = $menuName.val(); // input 입력값
+
+            if($selectedItem != null)
+                $selectedItem.html(menuName);
+            else
+                alert("선택한 메뉴가 존재하지 않습니다");
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="menuName">
+        <button id="add">추가</button>
+        <button id="update">수정</button>
+        <button id="remove">삭제</button>
+        <button id="up">UP</button>
+        <button id="down">down</button>
+    </div>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+</body>
+</html>

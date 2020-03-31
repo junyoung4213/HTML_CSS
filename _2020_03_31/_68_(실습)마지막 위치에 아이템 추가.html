@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul.menu {
+                padding: 10px;
+                list-style: none;
+                border: 1px solid #000;
+            }
+            ul.menu li {
+                border: 1px solid #eeeeee;
+                margin: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var $menu = null;
+            var $menuName = null;
+            $(document).ready(function() {
+                init();
+                initEvent();
+            });
+
+            // 사용할 노드를 얻기
+            function init() {
+                $menu = $('ul.menu');
+                $menuName = $('#menuName');
+            }
+
+            // 이벤트 연결
+            function initEvent() {
+                $('#add').click(function() {
+                    addMenu();
+                });
+            }
+
+            // add
+            function addMenu() {
+                var menuName = $menuName.val(); // input 입력값
+                var newMenuItem = '<li>' + menuName + '</li>';
+                $menu.append(newMenuItem);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="menuName" />
+            <button id="add">추가</button>
+            <button id="update">수정</button>
+            <button id="remove">삭제</button>
+            <button id="up">UP</button>
+            <button id="down">DOWN</button>
+        </div>
+        <ul class="menu"></ul>
+    </body>
+</html>

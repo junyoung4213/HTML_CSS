@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>노드 찾기 기본 구성</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <style>
+            div,
+            p,
+            ul,
+            li {
+                border: 1px solid #eeeeee;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+        <script>
+            // <a>처럼 연속적이지 않고 <li>감싸있는 태그는
+            //  항상 index가 0이 나온다
+
+            // <li>는 연속적으로 있으므로 index가 잘 나온다.
+            $(document).ready(function() {
+                $('ul li a').click(function() {
+                    // $('ul li').click(function() {
+                    console.log('index = ' + $(this).index());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+    </body>
+</html>

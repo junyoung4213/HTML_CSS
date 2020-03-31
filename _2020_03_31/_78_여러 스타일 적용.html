@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 자바스크립트
+
+            window.onload = function() {
+                var content = document.getElementById('test1');
+                content.style.fontSize = '100px';
+                content.style.border = '4px solid #f00';
+            };
+
+            // jQuery
+            // $(document).ready(function() {
+            //     var $content = $('#test1');
+            //     $content.css({
+            //         fontSize: '100px',
+            //         border: '4px solid #f00',
+            //     });
+            // });
+        </script>
+        <style>
+            div {
+                margin: 30px;
+                padding: 30px;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="test1" class="content" style="color:#f00">
+            스타일 다루기
+        </div>
+    </body>
+</html>

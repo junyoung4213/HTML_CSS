@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jQuery 사용 준비</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 이미지/플래시 파일을 완전히 로딩 후 실행
+            // window.onload = function() {
+            //     console.log(`width = $('#target').width()`);
+            // };
+            window.onload = () => {
+                console.log(`width = $('#target').width()`);
+            };
+        </script>
+    </head>
+    <body>
+        <img src="../images2/logo_01.jpg" id="target" alt="" />
+    </body>
+</html>
