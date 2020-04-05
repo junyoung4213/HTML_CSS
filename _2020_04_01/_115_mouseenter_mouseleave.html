@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #parent {
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                left: 200px;
+                top: 100px;
+                background-color: #f00;
+            }
+            #child {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                background-color: #fff;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // mouseenter / mouseleave 이벤트
+            // 자식의 영역을 부모의 영역으로 포함하는 이벤트
+            var count = 0;
+            var $info = null;
+            var $child = null;
+            $(document).ready(function() {
+                $info = $('#info');
+                $child = $('#child');
+                $('#parent').mouseenter(function(e) {
+                    count++;
+                    $info.html($info.html() + '<br>' + count + ', ' + e.target.id + '.over');
+                });
+                $('#parent').mouseleave(function(e) {
+                    count++;
+                    $info.html($info.html() + '<br>' + count + ', ' + e.target.id + '.out');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="info">여기에 이벤트 정보 출력</div>
+        <div id="parent">
+            parent
+            <div id="child">
+                child
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .panel {
+                width: 840px;
+                height: 415px;
+                border: 1px solid #ccc;
+            }
+            .nav {
+                width: 840px;
+                text-align: center;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var $button = null;
+            var i = 1;
+            var repeat = null;
+            var isPlay = false;
+            $(document).ready(function() {
+                init();
+                start();
+            });
+            function start() {
+                // play
+                $('#play').click(function() {
+                    if (isPlay) {
+                        clearInterval(repeat);
+                    } else {
+                        repeat = setInterval(() => {
+                            if (i > 60) {
+                                i = 1;
+                            }
+                            $('.panel img').attr('src', '../images2/' + i + '.jpg');
+                            i++;
+                        }, 50);
+                    }
+                    isPlay = !isPlay;
+                });
+
+                // stop
+                $('#stop').click(function() {
+                    clearInterval(repeat);
+                    isPlay = !isPlay;
+                });
+
+                // prev
+                $('#prev').click(function() {
+                    i--;
+                    if (i < 1) {
+                        i = 60;
+                    }
+                    $('.panel img').attr('src', '../images2/' + i + '.jpg');
+                });
+
+                // next
+                $('#next').click(function() {
+                    i++;
+                    if (i > 60) {
+                        i = 1;
+                    }
+                    $('.panel img').attr('src', '../images2/' + i + '.jpg');
+                });
+            }
+
+            function init() {
+                $button = $('.nav button');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="panel">
+            <img src="../images2/1.jpg" id="view" alt="" />
+        </div>
+        <div class="nav">
+            <button id="play">play</button>
+            <button id="stop">stop</button>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+    </body>
+</html>

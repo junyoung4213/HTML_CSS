@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul.menu {
+                padding: 10px;
+                list-style: none;
+                border: 1px solid #000;
+            }
+            ul.menu li {
+                border: 1px solid #eeeeee;
+                margin: 10px;
+            }
+            ul.menu li.black-bg {
+                background-color: #000;
+                color: #fff;
+            }
+            /* ul.menu li는 li.select나 li.border에 비해서 
+            직접적으로 지칭하므로 우선순위가 높다.
+            그런데 li.select는 ul.menu li에 설정된 것이 없으므로
+            적용되지만 li.border의 속성은 ul.menu li에 속성이
+            우선순위를 갖는다 */
+
+            /* li.select {
+                background-color: #ccc;
+            }
+            li.border {
+                border: 4px solid #f00;
+            } */
+            ul.menu li.select {
+                background-color: #ccc;
+            }
+            ul.menu li.border {
+                border: 4px solid #f00;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 스타일 속성 값 구하기
+            $(document).ready(function() {
+                $('#remove').click(function() {
+                    $('ul.menu li').each(function() {
+                        // 모든 클래스 제거
+                        $(this).removeClass();
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="remove">제거</button>
+        <ul class="menu">
+            <li class="select border">menu1</li>
+            <li>menu2</li>
+            <li class="select">menu3</li>
+            <li class="border">menu4</li>
+            <li class="select border black-bg">menu5</li>
+        </ul>
+    </body>
+</html>

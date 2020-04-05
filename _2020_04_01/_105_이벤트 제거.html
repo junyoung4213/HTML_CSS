@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // $('#btn').on('click', function() {
+                //     alert('안녕하세요');
+                // });
+
+                // 단축 이벤트 등록
+                $('#btn').click(function() {
+                    alert('안녕하세요');
+                });
+
+                // 이벤트 제거는 off로
+                $('#btnOff').click(function() {
+                    $('#btn').off('click');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="btn">확인</button>
+        <button id="btnOff">이벤트 제거</button>
+    </body>
+</html>

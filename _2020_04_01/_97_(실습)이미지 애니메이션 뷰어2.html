@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .panel {
+                width: 840px;
+                height: 415px;
+                border: 1px solid #ccc;
+            }
+            .nav {
+                width: 840px;
+                text-align: center;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var $button = null;
+            var i = 0;
+            var repeat = null;
+            var isPlay = false;
+            var $sel = null;
+            var $img = null;
+            $(document).ready(function() {
+                init();
+                start();
+            });
+
+            // start
+            function start() {
+                $button.click(function() {
+                    $sel = $(this).attr('id');
+                    // eval($sel + '()'); // eval : 문자로 표현된 JavaScript 코드를 실행하는 함수입니다.
+                    // 그러나 악의적인 공격을 받을 가능성이 있으며, Function보다 속도가 느립니다.
+                    Function($sel + '()')(); // eval보다 좋은 사용 방식입니다.
+                });
+            }
+            // play
+            function play() {
+                if (isPlay) {
+                    stop();
+                } else {
+                    isPlay = !isPlay;
+                    repeat = setInterval(() => {
+                        if (i > 60) {
+                            i = 0;
+                        }
+                        $img.attr('src', '../images2/' + ++i + '.jpg');
+                    }, 50);
+                }
+            }
+
+            // stop
+            function stop() {
+                if (isPlay) {
+                    clearInterval(repeat);
+                    isPlay = !isPlay;
+                }
+            }
+
+            // prev
+            function prev() {
+                stop();
+                if (i == 1) {
+                    i = 61;
+                }
+                $img.attr('src', '../images2/' + --i + '.jpg');
+            }
+
+            // next
+            function next() {
+                stop();
+                if (i == 60) {
+                    i = 0;
+                }
+                $img.attr('src', '../images2/' + ++i + '.jpg');
+            }
+
+            function init() {
+                $button = $('.nav button');
+                $img = $('.panel img');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="panel">
+            <img src="../images2/1.jpg" id="view" alt="" />
+        </div>
+        <div class="nav">
+            <button id="play">play</button>
+            <button id="stop">stop</button>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+    </body>
+</html>

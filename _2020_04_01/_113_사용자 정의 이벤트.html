@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul,
+            li {
+                border: 1px solid #eeeeee;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+            #output {
+                border: 1px solid #000;
+                min-height: 100px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 사용자 정의 이벤트
+            var $output = null;
+            var $menu = null;
+            var count = 0;
+
+            $(document).ready(function() {
+                init();
+                initAddEvent();
+                receiveEvent();
+            });
+
+            function initAddEvent() {
+                // 버튼이 눌릴 때마다 새 항목이 등록
+                $('#add').click(function() {
+                    count++;
+                    var $newItem = $('<li>new' + count + '</li>');
+                    $menu.append($newItem);
+
+                    dispatchEvent($newItem);
+                });
+            }
+
+            // 이벤트 발생
+            function dispatchEvent($newItem) {
+                // 사용자 이벤트 객체 생성
+                // addItem : 이벤트명
+                var event = jQuery.Event('addItem'); // addItem이라는 사용자 정의 이벤트 생성
+
+                // 이벤트 정보 추가
+                // event.item = $newItem;                  // 추가된 아이템 객체 저장
+                // event.itemName = $newItem.text();       // 추가된 아이템 이름 저장
+                // event.itemLength = $menu.children().length;     // $menu 밑에 자식들 길이 저장
+                var data = [$newItem, $newItem.text(), $menu.children().length]; // 배열로 정보를 저장한다. 위와 결과 같음.
+
+                // $menu객체에 이벤트 전달
+                $menu.trigger(event, data);
+            }
+            // 이벤트 수신
+            function receiveEvent() {
+                // $menu객체는 addItem이벤트 발생이 되면
+                // 여기서 처리한다
+                $menu.on('addItem', function(e, $item, itemName, itemLength) {
+                    $output.append('<p>추가 아이템 = ' + itemName + ', 아이템 개수 = ' + itemLength + '</p>');
+                });
+            }
+
+            function init() {
+                $output = $('#output');
+                $menu = $('ul.menu');
+            }
+        </script>
+    </head>
+    <body>
+        <button id="add">추가</button>
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+        <p>추가/삭제 정보가 출력되는 영역</p>
+        <div id="output"></div>
+    </body>
+</html>

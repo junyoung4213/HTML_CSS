@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul.menu {
+                padding: 10px;
+                list-style: none;
+                border: 1px solid #000;
+            }
+            ul.menu li {
+                border: 1px solid #eeeeee;
+                margin: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 스타일 속성 값 구하기
+            $(document).ready(function() {
+                var $item = $('ul.menu li.select');
+                $('#test').click(function() {
+                    var fontSize = parseInt($item.css('fontSize'));
+                    $item.css('fontSize', fontSize + 1);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="test">실행</button>
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li class="select">menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </body>
+</html>

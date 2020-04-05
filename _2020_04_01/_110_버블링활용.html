@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var $menu = null;
+            var count = 5;
+
+            $(document).ready(function() {
+                init();
+                initEvent();
+            });
+
+            function init() {
+                $menu = $('.menu');
+            }
+
+            function initEvent() {
+                $('#add').click(function() {
+                    addMenu();
+                });
+
+                //버블링에 의해 부모에 이벤트가 전달
+                $('ul.menu').on('click', function(e) {
+                    console.log('테스트=' + e.target.tagName);
+
+                    if (e.target.tagName == 'LI') {
+                        alert($(e.target).html());
+                    }
+                });
+            }
+
+            function addMenu() {
+                var menuName = 'menu' + count++;
+                var newMenuItem = '<li>' + menuName + '</li>';
+                $menu.append(newMenuItem);
+            }
+        </script>
+    </head>
+    <body>
+        <button id="add">추가</button>
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </body>
+</html>

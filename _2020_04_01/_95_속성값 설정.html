@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 이미지 클릭시 이미지 교체
+            $(document).ready(function() {
+                var $img = $('#target');
+                var sw = true;
+                $img.click(function() {
+                    if (sw) {
+                        $img.attr('src', '../images2/ch1.png');
+                    } else {
+                        $img.attr('src', '../images2/ch2.png');
+                    }
+
+                    sw = !sw;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img src="../images2/ch2.png" alt="ch2.png" id="target" />
+    </body>
+</html>

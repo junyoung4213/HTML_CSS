@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 스크롤바 생성될 수 있게 */
+            #panel {
+                width: 600px;
+                overflow: visible;
+                border: 1px dotted #ccc;
+                font-size: 20;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var $panel = null;
+            var count = 0;
+            $(document).ready(function() {
+                init();
+                start();
+            });
+
+            function addTag() {
+                var $span = $('<span></span>');
+                var color = '#' + parseInt(Math.random() * 0xffffff).toString(16);
+                var fontSize = 10 + parseInt(Math.random() * 40) + 'px';
+                $span.css({
+                    color: color,
+                    fontSize: fontSize,
+                    display: 'inline-block',
+                });
+
+                $span.html(count);
+                count++;
+                $panel.append($span);
+
+                // 윈도우를 자동 스크롤
+                this.window.scrollTo(0, window.document.body.scrollHeight);
+            }
+
+            function start() {
+                setInterval(addTag, 100);
+            }
+
+            function init() {
+                $panel = $('#panel');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="panel"></div>
+    </body>
+</html>

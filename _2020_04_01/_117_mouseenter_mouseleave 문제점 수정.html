@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #parent {
+                width: 300px;
+                height: 100px;
+                position: absolute;
+                left: 200px;
+                top: 100px;
+                background-color: #f00;
+                border: 1px solid #f00;
+                overflow: hidden;
+            }
+            #child {
+                width: 100px;
+                height: 200px;
+                position: absolute;
+                left: 100px;
+                top: 0;
+                background-color: #fff;
+            }
+            #child div {
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+            }
+            #child div.over {
+                background-color: #ff0;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // mouseenter / mouseleave 이벤트
+            // 자식의 영역을 부모의 영역으로 포함하는 이벤트
+            var count = 0;
+            var $info = null;
+            var $child = null;
+            $(document).ready(function() {
+                $info = $('#info');
+                $child = $('#child');
+                $('#parent').mouseenter(function(e) {
+                    count++;
+                    $info.html($info.html() + '<br>' + count + ', ' + e.target.id + '.over');
+                    $child.animate({ top: -100 }, 300);
+                });
+                $('#parent').mouseleave(function(e) {
+                    count++;
+                    $info.html($info.html() + '<br>' + count + ', ' + e.target.id + '.out');
+                    $child.animate({ top: 0 }, 300);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="info">여기에 이벤트 정보 출력</div>
+        <div id="parent">
+            parent
+            <div id="child">
+                <div>
+                    out
+                </div>
+                <div class="over">
+                    over
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
