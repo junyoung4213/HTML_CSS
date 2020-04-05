@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #info {
+                border: 1px solid #000;
+                height: 190px;
+                margin: 50px 0 0 100px;
+                width: 500px;
+            }
+            #parent1 {
+                position: absolute;
+                width: 500px;
+                height: 400px;
+                left: 100px;
+                top: 250px;
+                border: 1px solid #000;
+            }
+            #fish {
+                position: absolute;
+                padding: 30px;
+                margin: 50px;
+                left: 50px;
+                top: 100px;
+                border: 20px solid #f00;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            /* 요소의 크기
+            1) 기본크기(컨텐츠 영역 크기)
+                $대상.width()
+                $대상.height()
+            2) padding영역범위 크기
+                $대상.innerWidth()
+                $대상.innerHeight()
+            3) border영역범위 크기
+                $대상.outerWidth()
+                $대상.outerHeight()
+            4) margin영역범위 크기
+                $대상.outerWidth(true)
+                $대상.outerHeight(true)
+             */
+
+            $(document).ready(function() {
+                var $info = $('#info');
+                var $fish = $('#fish');
+
+                var str = '기본크기 width = ' + $fish.width() + ', height = ' + $fish.height() + '<br>';
+                str += 'padding영역크기 width = ' + $fish.innerWidth() + ', height = ' + $fish.innerHeight() + '<br>';
+                str += 'border영역크기 width = ' + $fish.outerWidth() + ', height = ' + $fish.outerHeight() + '<br>';
+                str += 'margin영역크기 width = ' + $fish.outerWidth(true) + ', height = ' + $fish.outerHeight(true) + '<br>';
+
+                // 지역 좌표 위치 구하기
+                var localPos = $fish.position();
+                str += '<br><br>';
+                str += '지역 좌표 left = ' + localPos.left + ', top = ' + localPos.top + '<br>';
+                // 전역 좌표 위치 구하기
+                var globalPos = $fish.offset();
+                str += '전역 좌표 left = ' + globalPos.left + ', top = ' + globalPos.top + '<br>';
+
+                $info.html($info.html() + str);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="info">(padding=30px, border=20px, margin=50px)<br /></div>
+        <div id="parent1">
+            <img src="../images2/fish.png" id="fish" alt="fish.png" />
+        </div>
+    </body>
+</html>

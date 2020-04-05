@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #parent1 {
+                position: absolute;
+                width: 500px;
+                height: 400px;
+                left: 100px;
+                top: 100px;
+                border: 1px solid #000;
+            }
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 100px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var $fish = $('#fish');
+                $('#parent1').click(function(e) {
+                    // 클릭한 전역 좌표 위치
+                    var left = e.pageX;
+                    var top = e.pageY;
+
+                    // 물고기 전역좌표로 위치 설정
+                    $fish.offset({
+                        left: left,
+                        top: top,
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body id="body">
+        <div id="parent1">
+            <img src="../images2/fish.png" id="fish" alt="fish.png" />
+        </div>
+    </body>
+</html>
