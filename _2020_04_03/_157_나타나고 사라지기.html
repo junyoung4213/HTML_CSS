@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #target{
+            border:1px solid black;
+            width:200px;
+            height:120px;
+            text-align: center;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $img1 = $("#target");
+
+            $("#show").on("click", function(){
+                $img1.show(6000, function(){
+                    alert("show 완료");
+                });
+            });
+            
+            $("#hide").on("click", function(){
+                $img1.hide(6000, function(){
+                    alert("hide 완료");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="target">
+        <img id="img_1" src="../images2/ch2.png">
+    </div>
+    <div>
+        <button id="show">show</button>
+        <button id="hide">hide</button>
+    </div>
+</body>
+</html>

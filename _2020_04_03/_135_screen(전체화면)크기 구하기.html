@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #main {
+                border: 1px dotted #f00;
+                width: 500px;
+                margin: 50px;
+            }
+            #info {
+                border: 10px solid #f00;
+                position: fixed;
+                left: 120px;
+                top: 100px;
+                font-style: 2em;
+                font-weight: bold;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // screen의 크기를 구하자
+            // 현재 화면의 해상도 구하기
+            $(document).ready(function() {
+                init();
+
+                showInfo();
+            });
+
+            function showInfo() {
+                var strInfo = '';
+                strInfo += 'screen.width=' + screen.width + '<br>';
+                strInfo += 'screen.height=' + screen.height + '<br>';
+
+                $('#info').html(strInfo);
+            }
+
+            function init() {
+                for (var i = 0; i < 1000; i++) {
+                    $('#main').append(pad(i, 3) + '<br>');
+                }
+            }
+
+            function pad(n, width) {
+                n = n + '';
+                if (n.length >= width) {
+                    return n;
+                } else {
+                    return new Array(width - n.length + 1).join('0') + n;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="main"></div>
+        <div id="info">
+            여기에 문서의 크기를 출력
+        </div>
+    </body>
+</html>

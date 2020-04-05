@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #info {
+                border: 1px solid #f00;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#resize').click(function(e) {
+                    // 이 함수는 window.open()메서드에 의해
+                    // 만들어진 윈도우만 크기변경 가능하다
+                    // 현재 윈도우는 안된다
+                    window.resizeTo(300, 300);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="create">생성</button>
+        <button id="resize">크기변경</button>
+        <div id="info">
+            크기 변경 버튼 누르기
+        </div>
+    </body>
+</html>

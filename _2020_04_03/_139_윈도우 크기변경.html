@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #info {
+                border: 1px solid #f00;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var newWindow = null;
+                $('#create').click(function() {
+                    newWindow = window.open('_138_윈도우 크기변경.html', 'newWindow', 'width=200, height=200');
+                });
+
+                $('#resize').click(function(e) {
+                    if (newWindow) {
+                        var width = 200 + Math.floor(Math.random() * 400);
+                        var height = 200 + Math.floor(Math.random() * 400);
+
+                        newWindow.resizeTo(width, height);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="create">생성</button>
+        <button id="resize">크기변경</button>
+        <div id="info">
+            크기 변경 버튼 누르기
+        </div>
+    </body>
+</html>

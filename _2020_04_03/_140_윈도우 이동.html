@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #info {
+                border: 1px solid #f00;
+                position: fixed;
+                left: 120px;
+                top: 100px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // window.open()에 의해 만들어진 윈도우만 이동가능
+
+                // 현재 윈도우 위치 구하기(화면 기준)
+                // window.screenLeft, window.screenTop;
+                // 윈도우 위치 설정
+                // window.moveTo(dx, dy);  // 화면에서 이동(절대위치)
+                // window.moveBy(dx, dy);  // 현재 위치에서 얼만큼 이동(상대위치)
+
+                var newWindow = null;
+                $('#create').click(function() {
+                    newWindow = window.open('_138_윈도우 크기변경.html', 'newWindow', 'width=200, height=200');
+                });
+
+                $('#move').click(function(e) {
+                    if (newWindow) {
+                        var left = screen.availWidth - newWindow.outerWidth;
+                        var top = newWindow.screenTop;
+
+                        // newWindow.moveTo(left, top);
+                        newWindow.moveBy(100, 0);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="create">생성</button>
+        <button id="move">이동</button>
+        <div id="info">
+            이동 정보 출력
+        </div>
+    </body>
+</html>

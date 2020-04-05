@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #main {
+                border: 1px dotted #f00;
+                width: 500px;
+                margin: 50px;
+            }
+            #info {
+                border: 10px solid #f00;
+                position: fixed;
+                left: 120px;
+                top: 100px;
+                font-style: 2em;
+                font-weight: bold;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // 브라우저 크기 구하기
+            $(document).ready(function() {
+                init();
+
+                $(window).on('resize', function() {
+                    showInfo();
+                });
+            });
+
+            function showInfo() {
+                var strInfo = '';
+
+                // 내부 너비, 높이 구하기
+                // 메뉴바, 툴바, 스크롤바가 포함되지 않은 내부 영역
+                strInfo += 'window.innerWidth=' + window.innerWidth + '<br>';
+                strInfo += 'window.innerHeight=' + window.innerHeight + '<br>';
+
+                // 외부 너비, 높이 구하기
+                // 내부영역+메뉴바+툴바+스크롤바 포함 영역
+                strInfo += 'window.outerWidth=' + window.outerWidth + '<br>';
+                strInfo += 'window.outerHeight=' + window.outerHeight + '<br>';
+
+                // 일반 너비, 높이 구하기
+                // 내부영역+메뉴바+툴바 영역 포함
+                strInfo += 'window.width=' + $(window).width() + '<br>';
+                strInfo += 'window.height=' + $(window).height() + '<br>';
+
+                $('#info').html(strInfo);
+            }
+
+            function init() {
+                for (var i = 0; i < 1000; i++) {
+                    $('#main').append(pad(i, 3) + '<br>');
+                }
+            }
+
+            function pad(n, width) {
+                n = n + '';
+                if (n.length >= width) {
+                    return n;
+                } else {
+                    return new Array(width - n.length + 1).join('0') + n;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="main"></div>
+        <div id="info">
+            여기에 문서의 크기를 출력
+        </div>
+    </body>
+</html>
